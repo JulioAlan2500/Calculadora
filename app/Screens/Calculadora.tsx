@@ -63,7 +63,7 @@ const calcular = (op: "+" | "-" | "*" | "/") => {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.resultado}>Resultado: {resultado}</Text>
+      <Text style={styles.resultado}>Resultado de la operacion: {resultado}</Text>
     </View>
   );
 }
