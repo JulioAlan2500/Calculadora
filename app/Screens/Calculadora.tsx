@@ -20,7 +20,7 @@ export default function Calculadora() {
         if (op === "+") res = n1 + n2;
         if (op === "-") res = n1 - n2;
         if (op === "*") res = n1 * n2;
-       if (op === "/") res = n2 !== 0 ? n1 / n2 : "No dividir entre 0";
+      
 
 
 
