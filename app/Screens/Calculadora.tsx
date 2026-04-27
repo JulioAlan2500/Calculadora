@@ -1,48 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 export default function Calculadora() {
+  const [num1, setNum1] = useState("");
+  const [num2, setNum2] = useState("");
+  const [resultado, setResultado] = useState("");
+
+const calcular = (op: "+" | "-" | "*" | "/") => {
+  const n1 = parseFloat(num1);
+  const n2 = parseFloat(num2);
+
+  if (isNaN(n1) || isNaN(n2)) {
+    setResultado("Error");
+    return;
+  }
+
+  let res: number | string = 0;
+
+  if (op === "+") res = n1 + n2;
+  if (op === "-") res = n1 - n2;
+  if (op === "*") res = n1 * n2;
+  if (op === "/") res = n2 !== 0 ? n1 / n2 : "No dividir entre 0";
+
+  setResultado(res.toString());
+};
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Calculadora</Text>
 
-<<<<<<< HEAD
-    const calcular = (op: "+" | "-" | "*" b| "/") => {
-        const n1 = parseFloat(num1);
-        const n2 = parseFloat(num2);
-=======
       <TextInput
         style={styles.input}
         placeholder="Número 1"
         keyboardType="numeric"
+        value={num1}
+        onChangeText={setNum1}
       />
->>>>>>> cd0bf641737317187eea13ac0598ce97fa456653
 
       <TextInput
         style={styles.input}
         placeholder="Número 2"
         keyboardType="numeric"
+        value={num2}
+        onChangeText={setNum2}
       />
 
       <View style={styles.buttons}>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn} onPress={() => calcular("+")}>
           <Text style={styles.btnText}>+</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn} onPress={() => calcular("-")}>
           <Text style={styles.btnText}>-</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn} onPress={() => calcular("*")}>
           <Text style={styles.btnText}>×</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn} onPress={() => calcular("/")}>
           <Text style={styles.btnText}>÷</Text>
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.resultado}>Resultado:</Text>
+      <Text style={styles.resultado}>Resultado: {resultado}</Text>
     </View>
   );
 }
