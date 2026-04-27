@@ -6,7 +6,7 @@ export default function Calculadora() {
     const [num2, setNum2] = useState("");
     const [resultado, setResultado] = useState("");
 
-    const calcular = (op: "+" | "-" | "*" | "/") => {
+    const calcular = (op: "+" | "-" | "*" b| "/") => {
         const n1 = parseFloat(num1);
         const n2 = parseFloat(num2);
 
@@ -20,7 +20,9 @@ export default function Calculadora() {
         if (op === "+") res = n1 + n2;
         if (op === "-") res = n1 - n2;
         if (op === "*") res = n1 * n2;
-        if (op === "/") res = n2 !== 0 ? n1 / n2 : "No dividir entre 0";
+       if (op === "/") res = n2 !== 0 ? n1 / n2 : "No dividir entre 0";
+
+
 
         setResultado(res.toString());
     };
