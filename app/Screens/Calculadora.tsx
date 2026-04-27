@@ -60,9 +60,7 @@ export default function Calculadora() {
                     <Text style={styles.btnText}>×</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.btn} onPress={() => calcular("/")}>
-                    <Text style={styles.btnText}>÷</Text>
-                </TouchableOpacity>
+               
             </View>
 
             <Text style={styles.resultado}>Resultado: {resultado}</Text>
