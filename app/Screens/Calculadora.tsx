@@ -20,9 +20,7 @@ export default function Calculadora() {
         if (op === "+") res = n1 + n2;
         if (op === "-") res = n1 - n2;
         if (op === "*") res = n1 * n2;
-      
-
-
+        if (op === "/") res = n2 !== 0 ? n1 / n2 : "No dividir entre 0";
 
         setResultado(res.toString());
     };
@@ -60,7 +58,9 @@ export default function Calculadora() {
                     <Text style={styles.btnText}>×</Text>
                 </TouchableOpacity>
 
-               
+                <TouchableOpacity style={styles.btn} onPress={() => calcular("/")}>
+                    <Text style={styles.btnText}>÷</Text>
+                </TouchableOpacity>
             </View>
 
             <Text style={styles.resultado}>Resultado: {resultado}</Text>
