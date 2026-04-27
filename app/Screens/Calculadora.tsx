@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
@@ -63,7 +66,7 @@ const calcular = (op: "+" | "-" | "*" | "/") => {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.resultado}>Resultado de la operacion: {resultado}</Text>
+      <Text style={styles.resultado}>Resultado: {resultado}</Text>
     </View>
   );
 }
@@ -111,3 +114,4 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
+>>>>>>> b2f171091c703e1d9ac5ee815cbf9427cee4729a
